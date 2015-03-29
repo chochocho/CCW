@@ -32,6 +32,7 @@ div#img .img-one:before {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#dc4225',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */ 
     -webkit-mask-box-image: url(../img/C.svg);
     mask-border: url(../img/C.svg);
+    mask: url(../img/C.svg);
     -webkit-transition: opacity .6s ease-in-out;
     -moz-transition: opacity .6s ease-in-out;
     -o-transition: opacity .6s ease-in-out;
@@ -73,6 +74,7 @@ div#img .img-two:before {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#dc4225',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */ 
     -webkit-mask-box-image: url(../img/A.svg);
     mask-border: url(../img/A.svg);
+    mask: url(../img/A.svg);
     -webkit-transition: opacity .6s ease-in-out;
     -moz-transition: opacity .6s ease-in-out;
     -o-transition: opacity .6s ease-in-out;

@@ -1,16 +1,14 @@
-div#img {
-    position:relative; 
-    width: 100%;
-    height: 100%; }
-
-div#img .img {
+div#img .img:hover:before {
+    content: '';
     position: absolute;
-    width: 100%;
-    height: 100%; }
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0; }
 
 div#img .img-one {
-    background: url('../img/img-01-gray.jpg') center center no-repeat;
-    background-size: cover;
+    background: url('../img/img-01-gray.jpg') center center / cover no-repeat;
     -webkit-transition: background .5s ease-in-out;
     -moz-transition: background .5s ease-in-out;
     -o-transition: background .5s ease-in-out;
@@ -39,9 +37,7 @@ div#img .img-one:before {
     -o-transition: opacity .6s ease-in-out;
     transition: opacity .6s ease-in-out; }
 
-div#img .img-one:hover {
-    background: url('../img/img-01.jpg') center center no-repeat; 
-    background-size: cover; }
+div#img .img-one:hover { background: url('../img/img-01.jpg') center center / cover no-repeat; }
 
 div#img .img-one:hover:before {
     content: '';
@@ -53,8 +49,7 @@ div#img .img-one:hover:before {
     opacity: 0; }
 
 div#img .img-two {
-    background: url('../img/img-02-gray.jpg') center center no-repeat;
-    background-size: cover;
+    background: url('../img/img-02-gray.jpg') center center / cover no-repeat;
     -webkit-transition: background .5s ease-in-out;
     -moz-transition: background .5s ease-in-out;
     -o-transition: background .5s ease-in-out;
@@ -83,15 +78,5 @@ div#img .img-two:before {
     -o-transition: opacity .6s ease-in-out;
     transition: opacity .6s ease-in-out; }
 
-div#img .img-two:hover {
-    background: url('../img/img-02.jpg') center center no-repeat; 
-    background-size: cover; }
+div#img .img-two:hover { background: url('../img/img-02.jpg') center center / cover no-repeat; }
 
-div#img .img-two:hover:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0; }

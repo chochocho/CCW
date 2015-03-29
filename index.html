@@ -10,9 +10,15 @@
 <body>
     <header>
           <div class="header">
-                Follow Us
+                <div class="left">Follow Us</div>
+                <div class="right">
+                    <p id="follow-trigger" class="follow-trigger">Follow Us</p>
+                    <p class="follow">
+                        TEST
+                    </p>
+                </div>
                 <a href="#"><img src="img/LOGO.png" class="logo"></a>
-                Follow Us
+
           </div>
     </header>
     <div id="container">
@@ -46,6 +52,9 @@
     $(function() {
         $('#nav-trigger').click(function(){
             $('.nav').slideToggle(100);
+        });
+        $('#follow-trigger').click(function(){
+            $('.follow').slideToggle(100);
         });
     });
     </script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carmen Chen Wu</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/image.css">
+</head>
+<body>
+    <header>
+          <div class="header">
+           <span style="float:left; display: inline-block;">Follow Us</span>
+            <a href="#"><img src="img/LOGO.png" class="logo"></a>
+           <span style="float:right; display: inline-block;">Follow Us</span>   
+          </div>
+           
+    </header>
+    <img src="img/ICON.png" id="nav-trigger" class="nav-trigger">
+    <nav>
+        <ul class="nav">
+           <li class="nav-item"><a href="#">COLLECTIONS</a></li>
+           <li class="nav-item"><a href="#">ABOUT</a></li>
+           <li class="nav-item"><a href="#">INSPIRATION</a></li>
+           <li class="nav-item"><a href="#">RETAILERS</a></li>
+           <li class="nav-item"><a href="#">SHOP</a></li>
+           <li class="nav-item"><a href="#">PRESS</a></li>
+           <li class="nav-item"><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+    <div id="container">
+        <div id="content">
+            <div id="img">
+              <div class="img img-one"></div>
+              <div class="img img-two"></div>
+            </div>
+        </div>    
+    </div>
+    <footer></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script>
+    $(function() {
+        $('#nav-trigger').click(function(){
+            $('.nav').slideToggle(100);
+        });
+    });
+    </script>
+    <script type="text/javascript" src="skrollr.min.js"></script>
+    <script type="text/javascript">
+    var s = skrollr.init();
+    </script>
+</body>
+</html>

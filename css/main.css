@@ -18,24 +18,23 @@ a {
 
 img  {
     height: auto;
-    max-width: 100%;
+    width: 100%;
   	-ms-interpolation-mode: bicubic; }
 
 html, body {
     width: 100%;
-    height: 100%;
     font-size: 100%; }
 
 body {
-	font-family: "Courier-Std", "Courier New", Courier, monospace;
+    font-family: "Courier-Std", "Courier New", Courier, monospace;
 	font-weight: normal;
 	font-style: normal;
-    font-size: .75em;
+    font-size: .70em;
+    font-weight: 600;
+    letter-spacing: .15em;
 	line-height: 1.5em;
     margin: 0;
     padding: 20px 0 0 0;
-    position: relative;
-    cursor: auto;
     background: rgb(245,233,235); /* Old browsers */
     background: -moz-linear-gradient(-45deg,  rgb(245,233,235) 0%, rgb(218,237,236) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgb(245,233,235)), color-stop(100%,rgb(218,237,236))); /* Chrome,Safari4+ */
@@ -59,13 +58,28 @@ header {
 }
 
 .header div {
+    text-transform: uppercase;
     display: inline-block;
     vertical-align: top;
+    margin: 0 0 10px 0;
+    padding: 0;
 }
 
 .logo {
     position: relative;
-    padding: 0 10px;
+    margin: 0 auto;
+}
+
+#date {
+    width: 125px;
+    height: 32px;
+    text-align: left;
+}
+
+#followus {
+    width: 125px;
+    height: 32px;
+    text-align: right;
 }
 
 .follow-trigger {
@@ -75,17 +89,21 @@ header {
     text-align: right;
 }
 
-.follow {
+.follow-links {
     display: none; 
     margin: 0;
     padding: 0;
     text-align: right;
 }
 
-.follow:after {
-    content: '';
-    display: inline-block;
-    width: 100%;
+.follow-links a:hover, .follow-trigger:hover {
+    color: #ED0D6C;
+}
+
+#day, #time {
+    margin: 0;
+    padding: 0;
+    text-align: left;
 }
 
 /* Nav */
@@ -93,6 +111,8 @@ header {
 .nav-trigger {
     cursor: pointer;
     position: relative;
+    width: 50px;
+    height: 50px;
     clear: both;
     display: block;
     padding: 10px 0 -10px 0;
@@ -104,7 +124,7 @@ nav {
     line-height: .95em;
 }
 
-nav a:hover, nav a:focus {
+nav a:hover {
     border-bottom: 4px solid #ED0D6C; }
 
 .nav {
@@ -142,7 +162,30 @@ div#container {
     z-index: 1; }
 
 div#content {
-    position: fixed;
+    position: relative;
+    border: 3px solid black;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding: 5px 5px 0 5px;
+    width: 90%;
+    max-width: 954px; 
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start; }
+
+.product {
+    flex-basis: 33%;
+    background: #ffffff;
+    margin-bottom: 5px;
+}
+
+div#img {
+    position: relative;
     border: 3px solid black;
     margin: 0 auto;
     left: 0;
@@ -153,10 +196,10 @@ div#content {
     height: 534px; 
     overflow: hidden; }
 
-div#img {
+/*div#img {
     position: relative; 
     width: 100%;
-    height: 100%; }
+    height: 100%; }*/
 
 div#img .img {
     position: relative;

@@ -9,10 +9,6 @@ $(function() {
     });
 });
 
-// Skrollr
-
-var s = skrollr.init();
-
 // Moment 
 
 var update = function () {

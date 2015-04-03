@@ -34,7 +34,7 @@ body {
     letter-spacing: .15em;
 	line-height: 1.5em;
     margin: 0;
-    padding: 20px 0 0 0;
+    padding: 20px 0 20px 0;
     background: rgb(245,233,235); /* Old browsers */
     background: -moz-linear-gradient(-45deg,  rgb(245,233,235) 0%, rgb(218,237,236) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgb(245,233,235)), color-stop(100%,rgb(218,237,236))); /* Chrome,Safari4+ */
@@ -167,7 +167,7 @@ div#content {
     margin: 0 auto;
     left: 0;
     right: 0;
-    padding: 5px 5px 0 5px;
+    padding: 2.5px;
     width: 90%;
     max-width: 954px; 
     
@@ -179,9 +179,24 @@ div#content {
     align-content: flex-start; }
 
 .product {
-    flex-basis: 33%;
-    background: #ffffff;
-    margin-bottom: 5px; }
+    flex: 1 30%;
+    min-width: 200px;
+    margin: 2.5px 2.5px -2.5px 2.5px; }
+
+.archive-1 {
+    flex: 1 25%;
+    min-width: 200px;
+    margin: 2.5px 2.5px -2.5px 2.5px; }
+
+.archive-2 {
+    flex: 1 60%;
+    min-width: 200px;
+    margin: 2.5px 2.5px -2.5px 2.5px; }
+
+.archive-3 {
+    flex: 1 95%;
+    min-width: 200px;
+    margin: 2.5px 2.5px -2.5px 2.5px; }
 
 div#img {
     position: relative;

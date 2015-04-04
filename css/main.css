@@ -48,10 +48,6 @@ body {
 
 /* Header */
 
-header {
-    z-index: 1000;
-}
-
 .header {
     margin: 0 auto;
     width: 90%;
@@ -203,7 +199,14 @@ div#img {
     max-height: 535px; 
     overflow: hidden; }
 
-@media (max-width: 600px) {
+@media (max-width: 50em) {
+  div#img {
+      padding: 4px;
+      height:75vh;
+  }
+}
+
+@media (max-width: 40em) {
   div#img {
       padding: 3px;
       height: 50vh;
@@ -220,8 +223,6 @@ div#img .img {
 
 
 /* Mailchimp */
-
-/* form */
 
 #mc_embed_signup {clear: both; font: 12px; width: 250px; margin: 0 auto; text-align: center;}
 #mc_embed_signup form {display: block; padding: 10px 0 10px 0}
@@ -279,7 +280,7 @@ div#img .img {
     -webkit-box-flex: 1 30%;
     -moz-box-flex: 1 30%;
     flex: 1 30%;
-    min-width: 200px;
+    min-width: 150px;
     margin: 2.5px 2.5px -2.5px 2.5px; }
 
 .archive-1 {

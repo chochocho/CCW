@@ -1,11 +1,11 @@
 // Scroll-Toggle
 
 $(function() {
-    $('#nav-trigger').click(function(){
-        $('.nav').slideToggle(100);
+    $('#menu-trigger').click(function(){
+        $('.menu').slideToggle(100);
     });
-    $('#follow-trigger').click(function(){
-        $('.follow-links').slideToggle(100);
+    $('#social-trigger').click(function(){
+        $('.social-links').slideToggle(100);
     });
 });
 

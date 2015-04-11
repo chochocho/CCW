@@ -18,6 +18,8 @@
     box-sizing: border-box; }
 
 img  {
+    padding: 0;
+    margin: 0;
     width: 100%;
     height: auto;
   	-ms-interpolation-mode: bicubic; }
@@ -29,10 +31,11 @@ html, body {
 body {
     padding: 0;
     margin: 0;
-    font-family: "Flama-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Courier-Std", "Courier New", Courier, monospace;
 	font-weight: normal;
     font-style: normal;
-	line-height: 1.5;
+    font-size: 0.9em;
+    letter-spacing: .10em;
     position: relative;
     background: rgb(245,233,235); /* Old browsers */
     background: -moz-linear-gradient(-45deg,  rgb(245,233,235) 0%, rgb(218,237,236) 100%); /* FF3.6+ */
@@ -68,7 +71,8 @@ th,
 td {
     margin: 0;
     padding: 0; 
-    text-rendering: optimizeLegibility; }
+    text-rendering: optimizeLegibility; 
+    font-kerning: normal;}
 
 a {
     color: inherit;
@@ -79,51 +83,39 @@ a {
     a img {
         border: none; }
 
-p {
-    font-family: inherit;
-    font-weight: normal;
-    font-size: 0.70em;
-    letter-spacing: 0.15em;
-    line-height: 1.6; }
+p {}
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Flama-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 1.4;
-    margin-top: 0.2em;
-    margin-bottom: 0.5em;
-     }
+    font-weight: normal; }
 
 h1 {
-  font-size: 0.70rem; }
+  font-size: 0.75em; }
 
 h2 {
-  font-size: 0.70rem; }
+  font-size: 0.75em; }
 
 h3 {
-  font-size: 0.65rem; }
+  font-size: 0.70em; }
 
 h4 {
-  font-size: 0.55rem; }
+  font-size: 0.65em; }
 
 h5 {
-  font-size: 0.50rem; }
+  font-size: 0.65em; }
 
 h6 {
-  font-size: 0.50rem; }
+  font-size: 0.50em; }
 
-/* Header */
+/* Header and Menu */
 
-header {
+header,
+nav {
+    font-weight: bold;
+    line-height: 0.90em;
     margin: 0 auto;
     width: 90%;
     max-width: 950px;
     text-align: center; }
-
-header p {
-    font-family: "Courier-Std", "Courier New", Courier, monospace;
-    font-weight: 600; }
 
 header div {
     text-transform: uppercase;
@@ -133,13 +125,13 @@ header div {
     padding: 0; }
 
 #date {
-    width: 125px;
-    height: 32px;
+    width: 140px;
+    height: 40px;
     text-align: left; }
 
 #social {
-    width: 125px;
-    height: 32px;
+    width: 140px;
+    height: 40px;
     text-align: right; }
 
 #social-trigger {
@@ -150,22 +142,6 @@ header div {
 
 .social-links {
     display: none; }
-
-/* Nav */
-
-nav {
-    font-family: "Courier-Std", "Courier New", Courier, monospace;
-    font-weight: 600;
-    font-size: 0.70em;
-    letter-spacing: 0.15em;
-    line-height: .95em; 
-    margin: 0 auto;
-    width: 90%;
-    max-width: 950px; }
-
-nav a:hover {
-    color: inherit;
-    border-bottom: 4px solid #ED0D6C; }
 
 #menu-trigger {
     cursor: pointer;
@@ -186,15 +162,19 @@ nav a:hover {
     display: none;
 }
 
-.menu li {
-    display: inline-block;
-}
-
 .menu:after {
     content: '';
     display: inline-block;
     width: 100%;
 }
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a:hover {
+    color: inherit;
+    border-bottom: 4px solid #ED0D6C; }
 
 /* Content */
 
@@ -219,7 +199,7 @@ div#window {
 }
 
 div#content {
-    padding: 2.5px;
+    padding: 0.25em;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;    
@@ -260,12 +240,159 @@ div#window {
     }
 }
 
+
+
+/* Shop */
+
+.item {
+    font-family: "Courier-Std", "Courier New", Courier, monospace;
+    -webkit-box-flex: 1 250px;
+    -moz-box-flex: 1 250px;
+    flex: 1 250px;
+    background-color: #f0eef0;
+    position: relative;
+    margin: 2.5px 2.5px 2.5px 2.5px; }
+
+.item-name {
+    text-transform: uppercase;
+    text-align: center; }
+
+.item-color {
+    text-transform: lowercase;
+    text-align: center;
+    letter-spacing: 0.15em;
+    font-style: italic; 
+    margin-bottom: 1.5em; }
+
+/* Text */
+
+.contact {
+    position: absolute;
+    font-family: "Flama-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.25em;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+}
+
+.contact h1 {
+    margin-bottom: 10em;
+}
+
+.contact h2 {
+    margin-bottom: 4em;
+}
+
+/* Products */
+
+.product-image {
+    -webkit-box-flex: 1 300px;
+    -moz-box-flex: 1 300px;
+    flex: 1 300px;
+    line-height: 0;
+    margin: .125em;
+    
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;    
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-start; 
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-content: flex-start;
+    align-content: flex-start; }
+
+.product-image-big {
+    -webkit-box-flex: 1 100%;
+    -moz-box-flex: 1 100%;
+    flex: 1 100%;
+    margin: 0 0 .125em 0; }
+
+.product-image-small {
+    -webkit-box-flex: 2 30%;
+    -moz-box-flex: 2 30%;
+    flex: 2 30%;
+    margin: .125em .125em 0 .125em; }
+
+.product-image div:nth-child(2) {
+    margin-left: 0; }
+
+.product-image div:nth-child(4) {
+    margin-right: 0; }
+
+.product-text {
+    font-family: "Flama-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-box-flex: 1 300px;
+    -moz-box-flex: 1 300px;
+    flex: 1 300px;
+    background: #ffffff;
+    padding: 3em 3em 1.5em 3em;
+    margin: .125em;
+}
+
+.product-text h1 {
+    font-size: 1.15em;
+}
+
+.product-text h2 {
+    font-family: "Courier-Std", "Courier New", Courier, monospace;
+    font-size: 0.85em;
+    font-style: italic; }
+
+.product-description {
+    font-size: 1.15em;
+    margin-bottom: 1.5em;
+}
+
+.product-details {
+    font-family: "Flama-Thin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: .85em;
+    font-weight: 800;
+    margin-bottom: 1.5em;
+}
+
+.addtocart {
+    font-family: "Courier-Std", "Courier New", Courier, monospace;
+    font-size: .9em;
+    font-weight: 800;
+}
+
+/* Archive */
+
+.archive-1 {
+    -webkit-box-flex: 1 30%;
+    -moz-box-flex:  1 30%;
+    flex: 1 30%;
+    min-width: 200px;
+    margin: 2.5px 2.5px -2.5px 2.5px; }
+
+.archive-2 {
+    -webkit-box-flex: 1 60%;
+    -moz-box-flex:  1 60%;
+    flex: 2 60%;
+    min-width: 200px;
+    margin: 2.5px 2.5px -2.5px 2.5px; }
+
+.archive-3 {
+    -webkit-box-flex: 1 90%;
+    -moz-box-flex:  1 90%;
+    flex: 3 90%;
+    min-width: 200px;
+    margin: 2.5px 2.5px -2.5px 2.5px; }
+
 /* Footer */
 
 
 /* Mailchimp */
 
-#mc_embed_signup {clear: both; font: 12px; width: 250px; margin: 0 auto; text-align: center;}
+#mc_embed_signup {clear: both; font-size: 0.9em; width: 250px; margin: 0 auto; text-align: center;}
 #mc_embed_signup form {display: block; padding: 10px 0 10px 0}
 #mc_embed_signup input {border:1px solid #000000; -webkit-appearance:none; text-align: center; height: 30px; color: #000000; margin-bottom: 5px;}
 #mc_embed_signup input:focus {border:1px solid #000000;}
@@ -314,82 +441,3 @@ div#window {
 
 .invisible {
   visibility: hidden; }
-
-/* Shop */
-
-.item-name {
-    position: absolute;
-    font-size: 100%;
-    margin: 0;
-    bottom: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.item-color {
-}
-
-/* Text */
-
-.contact {
-    position: absolute;
-    font-family: "Flama-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1em;
-    font-weight: normal;
-    letter-spacing: 0.25em;
-    text-align: center;
-    top: 45%;
-    left: 50%;
-    margin-right: -50%;
-    padding: 20px;
-    transform: translate(-50%, -50%);
-}
-
-/* Individual Boxes */
-
-.item {
-    -webkit-box-flex: 1 30%;
-    -moz-box-flex: 1 30%;
-    flex: 1 30%;
-    min-width: 150px;
-    position: relative;
-    margin: 2.5px 2.5px -2.5px 2.5px; }
-
-.product-image {
-    -webkit-box-flex: 1 30%;
-    -moz-box-flex: 1 30%;
-    flex: 1 30%;
-    min-width: 200px;
-    margin: 2.5px 2.5px -2.5px 2.5px;
-}
-
-.product-description {
-    -webkit-box-flex: 1 30%;
-    -moz-box-flex: 1 30%;
-    flex: 1 30%;
-    background: #ffffff;
-    min-width: 200px;
-    padding: 4em 4em 2.5em 4em;
-    margin: 2.5px 2.5px -2.5px 2.5px;
-}
-
-.archive-1 {
-    -webkit-box-flex: 1 30%;
-    -moz-box-flex:  1 30%;
-    flex: 1 30%;
-    min-width: 200px;
-    margin: 2.5px 2.5px -2.5px 2.5px; }
-
-.archive-2 {
-    -webkit-box-flex: 1 60%;
-    -moz-box-flex:  1 60%;
-    flex: 2 60%;
-    min-width: 200px;
-    margin: 2.5px 2.5px -2.5px 2.5px; }
-
-.archive-3 {
-    -webkit-box-flex: 1 90%;
-    -moz-box-flex:  1 90%;
-    flex: 3 90%;
-    min-width: 200px;
-    margin: 2.5px 2.5px -2.5px 2.5px; }

@@ -15,10 +15,11 @@
 
 .img-one {
     background: url('../img/img-01-gray.jpg') center center / cover no-repeat;
-    -webkit-transition: background .5s ease-in-out;
-    -moz-transition: background .5s ease-in-out;
-    -o-transition: background .5s ease-in-out;
-    transition: background .5s ease-in-out; }
+
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out; }
 
 .img-one:before {
     content: '';
@@ -44,7 +45,10 @@
     -o-transition: opacity .6s ease-in-out;
     transition: opacity .6s ease-in-out; }
 
-.img-one:hover { background: url('../img/img-01.jpg') center center / cover no-repeat; }
+.img-one:hover {
+    background: url('../img/img-01.jpg') center center / cover no-repeat;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%); }
 
 .img-one:hover:before {
     content: '';

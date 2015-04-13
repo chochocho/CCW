@@ -1,0 +1,42 @@
+@media (max-width: 50em) {
+    div#window {
+        padding: 5px;
+        height:75vh; }
+    div#content {
+        padding: 0.25em; }
+}
+
+@media (max-width: 40em) {
+    header,
+    nav {
+        font-size: 0.60em;
+        line-height: 1.15em; }
+    
+    #date {
+        width: 120px;
+        height: 30px; }
+
+    #social {
+        width: 120px;
+        height: 30px; }
+    
+    div#window {
+        padding: 5px;
+        height: 50vh; }
+    
+    div#content {
+        padding: 0.125em; }
+}
+
+@media (max-width: 55em) {
+    .product {
+        -webkit-flex-flow: column;
+        flex-flow: column; 
+        display: block; }
+}
+
+@media (max-width: 45em) {
+    .archive {
+        -webkit-flex-flow: column wrap;
+        flex-flow: column wrap; }
+}

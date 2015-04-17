@@ -1,0 +1,13 @@
+<div class="item">
+  <div class="image">
+    <a href="{{ product.url | within: collection }}">
+      <img src="{{ product.featured_image.src | product_img_url: '1024x1024' }}" alt="{{ product.featured_image.alt | escape }}" />
+    </a>
+  </div>
+  <div class="details">
+    <a href="{{ product.url | within: collection }}">
+    <h2 class="item-name">{{ product.title }}</h2>
+    <h3 class="item-color"></h3>
+    </a>
+  </div>
+</div>

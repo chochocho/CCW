@@ -358,15 +358,28 @@ div#window {
     font-size: 0.75em;
     margin-bottom: 1.75em; }
 
+.btn {
+    background-color: transparent;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: auto;
+    border: 0;
+    padding: 0;
+    -webkit-appearance:none;
+       -mos-appearance: none;
+            appearance: none;
+    text-align: left;
+    color: #000000; }
+
 .addtocart {
     font-family: "Courier-Std", "Courier New", Courier, monospace;
     font-size: 0.90em;
     font-weight: bolder;
     margin-bottom: 1.75em; }
 
-.addtocart a:hover {
-    color: inherit;
-    border-bottom: 4px solid #ED0D6C; }
+.addtocart:hover {
+    color: #ED0D6C; }
 
 .product-social {
     color: #808080;

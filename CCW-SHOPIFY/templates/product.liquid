@@ -1,0 +1,103 @@
+<div id="content" class="product">
+    <div class="product-image">
+        <div class="product-image-big">
+        	<a href="{{ product.featured_image.src | product_img_url: '1024x1024' }}">
+        	<img src="{{ product.featured_image.src | product_img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}" />
+        </div>
+        {% for image in product.images | offset:1 %}          
+        <div class="product-image-small">
+			<a href="{{ image.src | product_img_url: '1024x1024' }}">
+				<img src="{{ image.src | product_img_url: 'large' }}" alt="{{ image.alt | escape }}" />
+			</a>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="product-text">
+        <h1>{{ product.title }}</h1>
+        <h2>sugar pink</h2>
+        <p class="product-description">{{ product.price | money_without_trailing_zeros }}</p>
+        
+        <p class="product-description">{{ product.description }}</p>
+
+     	<form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
+        
+        {% assign hide_default_title = false %}
+        {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+          {% assign hide_default_title = true %}
+        {% endif %}
+
+        <!-- Begin product options -->
+        <div class="product-options {% if hide_default_title %}no-options {% endif %}">
+
+          <div class="select clearfix"{% if hide_default_title %} style="display:none"{% endif %}>
+            <select id="product-select" name="id">
+              {% for variant in product.variants %}
+              <option value="{{ variant.id }}"{% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}>{{ variant.title }} - {{ variant.price | money }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          {% if settings.display_quantity_dropdown %}
+          <div class="selector-wrapper">
+            <label for="quantity">Quantity</label>
+            <input id="quantity" type="number" name="quantity" value="1" min="1" max="5" class="tc item-quantity" />
+          </div>
+          {% endif %}
+
+          <div class="purchase-section{% if product.variants.size > 1 %} multiple{% endif %}">
+            <div class="purchase">
+              {% unless product.available %}
+              <p>Sold Out</p>
+              {% else %}
+              <input type="submit" id="add-to-cart" class="btn addtocart" name="add" value="add to cart" />
+              <div id="cart-animation" style="display:none">1</div>
+              {% endunless %}
+            </div>
+          </div>
+        </div>
+        <!-- End product options -->
+
+      	</form>
+
+        <p class="product-social">
+            <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
+            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+            <a href="#"><i class="fa fa-pinterest-p fa-lg"></i></a>
+        </p>
+        <p class="product-details">Please allow for 6 to 8 weeks for processing time. The moment you place an order with us, we stop our work and start bulding your bag from scratch. We make everything from start to finish in our studio in New York.</p>
+    </div>
+</div>
+
+  <script>
+  var selectCallback = function(variant, selector) {
+    if (variant && variant.featured_image) {
+      var newImage = variant.featured_image; // New image object.
+      var mainImageDomEl = jQuery('.featured img')[0]; // DOM element of main image we need to swap.
+      Shopify.Image.switchImage(newImage, mainImageDomEl, switchImage); // Define switchImage (the callback) in your theme's JavaScript file.
+    }
+    if (variant && variant.available) {
+      jQuery('#add-to-cart').removeAttr('disabled').removeClass('disabled'); // remove unavailable class from add-to-cart button, and re-enable button
+      if(variant.price < variant.compare_at_price){
+        jQuery('#price-preview').html(Shopify.formatMoney(variant.price, "{{ shop.money_format }}") + " <del>" + Shopify.formatMoney(variant.compare_at_price, "{{ shop.money_format }}") + "</del>");
+      } else {
+        jQuery('#price-preview').html(Shopify.formatMoney(variant.price, "{{ shop.money_format }}"));
+      }
+    } else {
+      jQuery('#add-to-cart').addClass('disabled').attr('disabled', 'disabled'); // set add-to-cart button to unavailable class and disable button
+      var message = variant ? "Sold Out" : "Unavailable";
+      jQuery('#price-preview').text(message);
+    }
+  };
+  
+  jQuery(document).ready(function($){
+    new Shopify.OptionSelectors("product-select", { product: {{ product | json }}, onVariantSelected: selectCallback, enableHistoryState: true });
+
+    // Add label if only one product option and it isn't 'Title'.
+    {% if product.options.size == 1 and product.options.first != 'Title' %}
+      $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first | escape }}</label>');
+    {% endif %}
+
+  });
+  </script>

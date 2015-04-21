@@ -259,7 +259,7 @@ div#window {
 
 /* Text */
 
-.contact {
+.text-only {
     font-family: "Flama-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: 0.15em;
     text-align: center;
@@ -267,14 +267,13 @@ div#window {
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    padding: 20px;
     transform: translate(-50%, -50%); }
 
-.contact h1 {
+.text-only h1 {
     margin-bottom: 5em; }
 
-.contact h2 {
-    margin-bottom: 4em; }
+.text-only h2 {
+    margin: 4em 0;}
 
 /* Products */
 
@@ -338,8 +337,8 @@ div#window {
     margin: .125em; }
 
 .product-text h1 {
-    font-family: "Flama-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1em; 
+    font-family: "Courier-Std", "Courier New", Courier, monospace;
+    font-size: 1.25em; 
     text-transform: uppercase; }
 
 .product-text h2 {

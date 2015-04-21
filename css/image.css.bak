@@ -14,10 +14,8 @@
     opacity: 0; }
 
 .img-one {
-    background: url('../img/img-02-gray.jpg') center center / cover no-repeat;
--webkit-transform: rotate(0);
--moz-transform: rotate(0);
-transform: rotate(0);
+    background: url('../img/img-01-gray.jpg') center center / cover no-repeat;
+
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
@@ -39,16 +37,18 @@ transform: rotate(0);
     background: -ms-linear-gradient(-45deg,  rgb(0,47,75) 0%,rgb(220,66,37) 100%); /* IE10+ */
     background: linear-gradient(135deg,  rgb(0,47,75) 0%,rgb(220,66,37) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#dc4225',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */ 
+    -webkit-mask-box-image: url(../img/C.svg);
+    mask-border: url(../img/C.svg);
+    mask: url(../img/C.svg);
     -webkit-transition: opacity .6s ease-in-out;
     -moz-transition: opacity .6s ease-in-out;
     -o-transition: opacity .6s ease-in-out;
     transition: opacity .6s ease-in-out; }
 
 .img-one:hover {
-    background: url('../img/img-02.jpg') center center / cover no-repeat;
-    -webkit-transform: rotate(0);
--moz-transform: rotate(0);
-transform: rotate(0); }
+    background: url('../img/img-01.jpg') center center / cover no-repeat;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%); }
 
 .img-one:hover:before {
     content: '';

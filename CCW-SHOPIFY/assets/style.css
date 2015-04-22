@@ -132,7 +132,7 @@ h6 {
     text-align: left;
     color: #000000; 
     -webkit-appearance:none;
-    -mos-appearance: none;
+    -moz-appearance: none;
     appearance: none; }
 
 .addtocart {
@@ -142,7 +142,7 @@ h6 {
     font-weight: bolder;
     margin-bottom: 1.75em;
     -webkit-appearance: none;
-       -mos-appearance: none;
+       -moz-appearance: none;
             appearance: none; }
 
 .addtocart:hover {
@@ -469,7 +469,7 @@ div#window {
 
 #mc_embed_signup {clear: both; font-size: 0.7em; width: 250px; margin: 0 auto; text-align: center;}
 #mc_embed_signup form {display: block; padding: 10px 0 10px 0}
-#mc_embed_signup input {border:1px solid #000000; -webkit-appearance:none; -mos-appearance: none; appearance: none; text-align: center; height: 30px; color: #000000; margin-bottom: 5px;}
+#mc_embed_signup input {border:1px solid #000000; -webkit-appearance:none; -moz-appearance: none; appearance: none; text-align: center; height: 30px; color: #000000; margin-bottom: 5px;}
 #mc_embed_signup input:focus {border:1px solid #000000;}
 #mc_embed_signup .button {
     background-color: transparent;

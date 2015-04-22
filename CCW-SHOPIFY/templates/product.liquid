@@ -1,14 +1,15 @@
 <div id="content" class="product">
     <div class="product-image">
         <div class="product-image-big">
-        	<a href="{{ product.featured_image.src | product_img_url: '1024x1024' }}">
-        	<img src="{{ product.featured_image.src | product_img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}" />
+          <a href="{{ product.featured_image.src | product_img_url: '1024x1024' }}">
+          <img src="{{ product.featured_image.src | product_img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}" />
+            </a>
         </div>
         {% for image in product.images | offset:1 %}          
         <div class="product-image-small">
-			<a href="{{ image.src | product_img_url: '1024x1024' }}">
-				<img src="{{ image.src | product_img_url: 'large' }}" alt="{{ image.alt | escape }}" />
-			</a>
+      <a href="{{ image.src | product_img_url: '1024x1024' }}">
+        <img src="{{ image.src | product_img_url: 'large' }}" alt="{{ image.alt | escape }}" />
+      </a>
         </div>
         {% endfor %}
     </div>
@@ -20,7 +21,7 @@
         
         <p class="product-description">{{ product.description }}</p>
 
-     	<form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
+      <form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
         
         {% assign hide_default_title = false %}
         {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
@@ -58,7 +59,7 @@
         </div>
         <!-- End product options -->
 
-      	</form>
+        </form>
 
         <p class="product-social">
             <a href="#"><i class="fa fa-instagram fa-lg"></i></a>

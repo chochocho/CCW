@@ -15,50 +15,41 @@
       <form action="/cart" method="post" id="cartform">
             {% for item in cart.items %}
             <div class="cart-row">
-              <div><a href="{{ item.url }}"><img src="{{ item | img_url: 'medium' }}"  alt="{{ item.product.title }}" /></a></div>
-              <div>
-                  <a href="{{ item.url }}">{{ item.product.title }}
+              <div class="cart-image"><a href="{{ item.url }}"><img src="{{ item | img_url: 'grande' }}"  alt="{{ item.product.title }}" /></a></div>
+              <div class="cart-text">
+                <p class="item-name"><a href="{{ item.url }}">{{ item.product.title }}
                     {% if item.product.variants.size > 1 %}
                     <span class="variant_title">{{ item.variant.title }}</span>
                     {% endif %}
-                  </a>
-              </div>
-              <div>
+                    </a></p>
                   <input type="text" size="4" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" onfocus="this.select();" class="cart-quantity" />
-              </div>
-              <div>
-                  {{ item.line_price | money }}
-              </div>
-              <div>
-                  <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="cart">Remove</a>
-              </div>
+                    {{ item.line_price | money }}
+                  <a href="/cart/change?line={{ forloop.index }}&quantity=0">Remove</a>
               </div>
             </div>
             {% endfor %}
-        <div class="cart-row">
-              <td class="image">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td class="price"><span class="total"><strong>{{ cart.total_price | money }}</strong></span></td>
-              <td>&nbsp;</td>
-        </div>
+        <div class="cart-row"><p class="cart-total">TOTAL: {{ cart.total_price | money }}</p></div>
 
+        {% comment %}
         <div class="cart-row">
-          {% comment %}
           <!--
           <div class="checkout-buttons clearfix">
             <label for="note">Add special instructions for your order...</label>
             <textarea id="note" name="note" rows="8" cols="70">{{ cart.note }}</textarea>
           </div>
           -->
-          {% endcomment %}
         </div>
+        {% endcomment %}
 
         <div class="cart-row">
-          <div class="buttons clearfix">
-            <input type="submit" id="checkout" class="btn" name="checkout" value="Check out" />
-            <input type="submit" id="update-cart" class="btn secondary" name="update" value="Update" />
-          </div>
+            <input type="submit" id="update-cart" class="btn button" name="update" value="update " />
+        </div>
+        
+        <div class="cart-row">
+            <input type="submit" id="checkout" class="btn button" name="checkout" value="check out" />
+        </div>
+            
+        <div class="cart-row">
           {% if additional_checkout_buttons %}        
              <div class="extra-checkout-buttons">
              {{ content_for_additional_checkout_buttons }}

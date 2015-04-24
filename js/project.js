@@ -20,3 +20,9 @@ $(document).ready(function(){
     update();
     setInterval(update, 1000);
 });
+
+// Lettering.js
+
+$(document).ready(function() {
+  $(".product-title").lettering('words');
+});

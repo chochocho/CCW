@@ -20,3 +20,11 @@ $(document).ready(function(){
     update();
     setInterval(update, 1000);
 });
+
+$(document).ready(function() {
+  $(".product-title").lettering('words');
+});
+
+$(document).ready(function() {
+  $(".shop-item-name").lettering('words');
+});

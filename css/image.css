@@ -15,15 +15,12 @@
 
 .img-one {
     background: url('../img/img-02-gray.jpg') center center / cover no-repeat;
--webkit-transform: rotate(0);
--moz-transform: rotate(0);
-transform: rotate(0);
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out; }
 
-.img-one:before {
+.img-one:after {
     content: '';
     position: absolute;
     top: 0;
@@ -45,12 +42,9 @@ transform: rotate(0);
     transition: opacity .6s ease-in-out; }
 
 .img-one:hover {
-    background: url('../img/img-02.jpg') center center / cover no-repeat;
-    -webkit-transform: rotate(0);
--moz-transform: rotate(0);
-transform: rotate(0); }
+    background: url('../img/img-02.jpg') center center / cover no-repeat; }
 
-.img-one:hover:before {
+.img-one:hover:after {
     content: '';
     position: absolute;
     top: 0;

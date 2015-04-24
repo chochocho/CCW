@@ -26,4 +26,12 @@
     
     div#content {
         padding: 0.125em; }
+  
+  	.text-only h1 {
+  		font-size: 0.70em;
+  		margin-bottom: 2em; }
+
+	.text-only h2 {
+  		font-size: 0.70em;
+  		margin: 2em 0; }
 }

@@ -7,16 +7,15 @@
         </div>
         {% for image in product.images | offset:1 %}          
         <div class="product-image-small">
-      <a href="{{ image.src | product_img_url: '1024x1024' }}">
-        <img src="{{ image.src | product_img_url: 'large' }}" alt="{{ image.alt | escape }}" />
-      </a>
+      		<a href="{{ image.src | product_img_url: '1024x1024' }}">
+        	<img src="{{ image.src | product_img_url: 'grande' }}" alt="{{ image.alt | escape }}" />
+      		</a>
         </div>
         {% endfor %}
     </div>
     
     <div class="product-text">
-        <h1>{{ product.title }}</h1>
-        <h2>sugar pink</h2>
+        <h1 class="product-title">{{ product.title }}</h1>
         <p class="product-description">{{ product.price | money_without_trailing_zeros }}</p>
         
         <p class="product-description">{{ product.description }}</p>
@@ -49,7 +48,7 @@
           <div class="purchase-section{% if product.variants.size > 1 %} multiple{% endif %}">
             <div class="purchase">
               {% unless product.available %}
-              <p class="addtocart">Sold Out</p>
+              <p>Sold Out</p>
               {% else %}
               <input type="submit" id="add-to-cart" class="btn addtocart" name="add" value="add to cart" />
               <div id="cart-animation" style="display:none">1</div>
@@ -62,10 +61,8 @@
         </form>
 
         <p class="product-social">
-            <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
-            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p fa-lg"></i></a>
+            <!--<a href="#"><i class="fa fa-facebook fa-lg"></i></a>-->
+            <a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&amp;media=http:{{ product | img_url: '1024x1024' | split: '?' | first }}&amp;description={{ product.title | strip_html | truncate: 200, '' | url_param_escape }}{% for tag in product.tags limit: 3 %}{{ tag | replace: ' ', '-' | prepend: ' #' | url_param_escape }}{% endfor %}" data-pin-do="buttonPin" data-pin-config="none"><i class="fa fa-pinterest-p fa-lg"></i></a>
         </p>
         <p class="product-details">Please allow for 6 to 8 weeks for processing time. The moment you place an order with us, we stop our work and start bulding your bag from scratch. We make everything from start to finish in our studio in New York.</p>
     </div>

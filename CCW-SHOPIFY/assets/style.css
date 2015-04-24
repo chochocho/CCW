@@ -40,7 +40,18 @@ img  {
 
 html, body {
     height: 100%;
-    font-size: 100%; }
+    font-size: 100%; 
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale; }
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.25),
+only screen and ( min-device-pixel-ratio: 1.25),
+only screen and ( min-resolution: 200dpi),
+only screen and ( min-resolution: 1.25dppx)
+{
+    -webkit-font-smoothing: subpixel-antialiased;
+}
 
 body {
     padding: 0;
@@ -48,8 +59,8 @@ body {
     font-family: "Courier-Std", "Courier New", Courier, monospace;
     font-weight: normal;
     font-style: normal;
-    letter-spacing: 0.10em;
     position: relative;
+  	letter-spacing: 0.10em;
     background: rgb(245,233,235); /* Old browsers */
     background: -moz-linear-gradient(-45deg,  rgb(245,233,235) 0%, rgb(218,237,236) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgb(245,233,235)), color-stop(100%,rgb(218,237,236))); /* Chrome,Safari4+ */
@@ -83,9 +94,7 @@ blockquote,
 th,
 td {
     margin: 0;
-    padding: 0; 
-    text-rendering: optimizeLegibility; 
-    font-kerning: normal; }
+    padding: 0; }
 
 a {
     color: inherit;
@@ -133,11 +142,11 @@ h6 {
 
 .button {
     border:1px solid #000000;
-    font-size: 0.80em;
+  	font-size: 0.80em;
     background-color: #ffffff;
-    width: 35%;
-    margin-bottom: 5px;
-    height: 30px; }
+	width: 35%;
+  	margin-bottom: 5px;
+	height: 30px; }
 
 .button:hover {
     color: #ffffff; 
@@ -150,6 +159,7 @@ nav {
     font-size: 0.80em;
     font-weight: bold;
     line-height: 0.80em;
+  	letter-spacing: 0.10em;
     margin: 0 auto;
     width: 90%;
     max-width: 950px;
@@ -182,6 +192,9 @@ header div {
 .social-links {
     font-size: 0.80em;
     display: none; }
+
+.logo {
+  max-width: 600px; }
 
 #menu-trigger {
     cursor: pointer;
@@ -264,50 +277,111 @@ div#window {
     max-height: 535px; 
     overflow: hidden; }
 
+/* Press */
+
+.press {
+  	-webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;}
+
+.press-item {
+	-webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 1 1 250px;
+    -ms-flex: 1 1 250px;
+    flex: 1 1 250px;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+
 /* Shop */
 
 .shop {
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap; }
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;}
 
-.item {
+.shop-item {
     font-family: "Courier-Std", "Courier New", Courier, monospace;
-    -webkit-box-flex: 1 250px;
-    -moz-box-flex: 1 250px;
-    -ms-box-flex: 1 250px;
-    box-flex: 1 250px;
-    flex: 1 250px;
+	-webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 1 1 250px;
+    -ms-flex: 1 1 250px;
+    flex: 1 1 250px;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
     background-color: #f1eef0;
-    position: relative;
     margin: .125em; }
 
-.item-name {
+.shop-item-name {
     text-transform: uppercase;
-    text-align: center; }
+    text-align: center; 
+	margin-bottom: 1.5em;}
 
-.item-color {
-    text-transform: lowercase;
-    text-align: center;
-    font-style: italic; 
-    margin-bottom: 1.5em; }
+.shop-item-name .word1 {
+    display: block;
+    line-height: 1em;
+    font-size: 1.25em;
+    text-transform: uppercase; }
+
+.shop-item-name .word2,
+.shop-item-name .word3,
+.shop-item-name .word4,
+.shop-item-name .word5 {
+    line-height: 1.25em;
+    font-size: 0.90em;
+  	font-weight: bold;
+    font-style: italic;
+  	letter-spacing: 0.15em;
+    text-transform: lowercase;}
 
 /* Text */
 
 .text-only {
-    font-family: "Flama-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  	font-family: "Flama-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  	display: table;
+  	height: 100%;
+  	width: 100%;
     letter-spacing: 0.15em;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%); }
+    text-align: center; }
+
+.text-only div {
+  	display: table-cell;
+  	vertical-align: middle; }
 
 .text-only h1 {
-    margin-bottom: 5em; }
+  	font-size: 0.80em;
+    padding: 0 2em;
+  	margin-bottom: 5em; }
+
+.text-only h1:only-child {
+  	margin-bottom: 0; }
+
 
 .text-only h2 {
-    margin: 4em 0;}
+  	font-size: 0.80em;
+    padding: 0 2em;
+  	margin: 4em 0;}
+
+.text-only h2:last-child {
+  	margin: 0; }
 
 /* Products */
 
@@ -321,11 +395,19 @@ div#window {
 
 .product-image,
 .product-text {
-    -webkit-box-flex: 1 25em;
-    -moz-box-flex: 1 25em;
-    -ms-box-flex: 1 25em;
-    box-flex: 1 25em;
-    flex: 1 25em; 
+  	-webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 22.5em;
+    -ms-flex: 1 1 22.5em;
+    flex: 1 1 22.5em;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
     max-width: 100%; }
 
 .product-image {
@@ -363,46 +445,73 @@ div#window {
     align-items: flex-start; }
 
 .product-image-big {
-    -webkit-box-flex: 1 100%;
-    -moz-box-flex: 1 100%;
-    -ms-box-flex: 1 100%;
-    box-flex: 1 100%;
-    flex: 1 100%;
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
     margin: 0 0 .125em 0; }
 
 .product-image-small {
-    -webkit-box-flex: 2 30%;
-    -moz-box-flex: 2 30%;
-    -ms-box-flex: 2 30%;
-    box-flex: 2 30%;
-    flex: 2 30%;
+	-webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 20%;
+    -ms-flex: 1 1 20%;
+    flex: 1 1 20%;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
     margin: .125em .125em 0 .125em; }
 
 .product-image div:nth-child(2) {
     margin-left: 0; }
  
-.product-image div:nth-child(4) {
+.product-image div:last-child {
     margin-right: 0; }
 
 .product-text {
     background: #ffffff;
-    padding: 2.75em 2.5em 1em 2em;
-    margin: .125em; }
+    padding: 2.75em 2.5em 1em 2em; }
 
-.product-text h1 {
+.product-title {
     font-family: "Courier-Std", "Courier New", Courier, monospace;
-    font-size: 1.25em; 
+    font-size: 1.10em; 
+    line-height: 0.65em;
+    margin-bottom: 0.50em; }
+
+.product-title .word1 {
+    display: block;
+    line-height: 1em;
+    font-size: 1.25em;
     text-transform: uppercase; }
 
-.product-text h2 {
-    font-family: "Courier-Std", "Courier New", Courier, monospace;
-    font-size: 0.70em;
-    font-weight: bold;
-    font-style: italic; }
+.product-title .word2,
+.product-title .word3,
+.product-title .word4,
+.product-title .word5 {
+    line-height: 1.25em;
+    font-size: 0.60em;
+  	font-weight: bolder;
+    font-style: italic;
+  	letter-spacing: 0.15em;
+    text-transform: lowercase;}
 
 .product-description {
     font-family: "Flama-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 0.80em;
+    font-size: 0.90em;
     margin-bottom: 1.5em; }
 
 .product-specs {
@@ -427,7 +536,7 @@ div#window {
 .purchase p,
 .addtocart {
     border: none;
-    text-align: left;
+  	text-align: left;
     font-family: "Courier-Std", "Courier New", Courier, monospace;
     font-size: 0.90em;
     font-weight: bolder;
@@ -491,8 +600,8 @@ div#window {
 
 .cart-text {
     text-align: center;
-    text-transform: uppercase;
-    -webkit-box-ordinal-group: 1;
+  	text-transform: uppercase;
+  	-webkit-box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
     -webkit-order: 0;
     -ms-flex-order: 0;
@@ -517,8 +626,8 @@ div#window {
     color: #000000; }
 
 .cart-total {
-    font-weight: bold;
-    margin: 1em;
+  	font-weight: bold;
+  	margin: 1em;
 }
 
 /* Archive */

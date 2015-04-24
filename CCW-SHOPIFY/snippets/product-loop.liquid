@@ -1,13 +1,12 @@
-<div class="item">
-  <div class="image">
+<div class="shop-item">
+  <div class="shop-item-image">
     <a href="{{ product.url | within: collection }}">
-      <img src="{{ product.featured_image.src | product_img_url: '1024x1024' }}" alt="{{ product.featured_image.alt | escape }}" />
+      <img src="{{ product.featured_image.src | product_img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" />
     </a>
   </div>
-  <div class="details">
+  <div class="shop-item-details">
     <a href="{{ product.url | within: collection }}">
-    <h2 class="item-name">{{ product.title }}</h2>
-    <h3 class="item-color"></h3>
+    <h2 class="shop-item-name">{{ product.title }}</h2>
     </a>
   </div>
 </div>
